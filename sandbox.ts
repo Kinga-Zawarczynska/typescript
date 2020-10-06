@@ -1,33 +1,38 @@
-let names = ['luigi', 'mario', 'yoshi'];
+let character: string;
+let age: number;
 
-names.push('tobe');
-// names.push(3);
-// names[0] = true;
-let numbers = [10, 20, 30, 40];
-numbers.push[2];
-// numbers.push('=string');
+// age = 'luigi'
+age = 13;
+character = 'han solo';
+// character = false;
 
-let mixed = ['ken', 4, 'chun-li', 8, 9, true];
+//arrays
+let ninjas: string[];
+// or we can declare empty array right away, because above there is no array, it will be created in future
+let superNinjas: string[] = [];
+// ninjas = [10, 23]
+ninjas = ['han', 'solo'];
+
+//union types
+let mixed: (string|number)[] = [];
 mixed.push('hello');
-mixed.push(false);
-mixed[0] = 3;
+mixed.push(4);
+// mixed.push(false);
 
+let uid: string|number;
+uid = '123';
+uid = 1223;
+// uid = false;
 
+// objects
+let ninjaOne: object;
+ninjaOne = { name: 'yoshi', age: 30 };
 
-//objects
-let ninja = {
-  name: 'mario',
-  belt: 'black',
-  age: 30
+let ninjatwo: {
+  name: string,
+  age: number,
+  belt: string
 }
 
-ninja.age = 40;
-// ninja.name = 3;
-ninja.name = 'ryan';
-// ninja.skills = ['fighting', 'sneaking']
-// ninja = 'hello';
-ninja = {
-  name: 'yoshi',
-  belt: 'orange',
-  age: 40
-}
+ninjatwo = { name: 'mario', age: 20, belt: 'black' } //but we can't leave it empty object
+
