@@ -1,34 +1,22 @@
-// let greet = () => {
-//     console.log('Hello world');
-// };
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum }
 
-// greet = 'hello' can't do that
+// INSTEAD OF WRITING THIS WITH CODE DUPLICATION
 
-let greet: Function;
-// greet = 'hello'
-
-greet = () => {
-    console.log('hello world');
+const logDetails = (uid: string | number, item: string) => {
+    console.log(`${item} has uid of ${uid}`);
 }
 
-const add = (a: number, b: number, c: number | string = 10) => {
-console.log(a+b)
-console.log(c)
+const greet = (user: {name: string, uid: string | number}) => {
+    console.log(`${user.name} says hello`);
 }
 
-// c?: means it it an optional argument
-// if we won't give a c, c will be equal to undefined
-// if we pass the deafult value of c, we don't have to use '?'
+//WE CAN WRITE THIS USING TYPE ALIAS
 
-add(5,10);
-// add(5, '10')
-add(5, 10, '20');
-
-const minus = (a: number, b: number) => {
-    return a + b
+const logDetails2 = (uid: StringOrNum, item: string) => {
+    console.log(`${item} has uid of ${uid}`);
 }
 
-let result = minus(10,7)
-//so now the type of result is equal to type of minus functuion return type - number - ane we can't override this
-//if we don't return anything from function, it will return void 
-
+const greet2 = (user: objWithName) => {
+    console.log(`${user.name} says hello`);
+}
