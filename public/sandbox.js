@@ -1,15 +1,25 @@
 "use strict";
-// INSTEAD OF WRITING THIS WITH CODE DUPLICATION
-var logDetails = function (uid, item) {
-    console.log(item + " has uid of " + uid);
+// let greet: Function;
+// example 1
+var greet;
+greet = function (name, greeting) {
+    console.log(name + " says " + greeting);
 };
-var greet = function (user) {
-    console.log(user.name + " says hello");
+//example 2
+var calc;
+calc = function (numOne, numTwo, action) {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-//WE CAN WRITE THIS USING TYPE ALIAS
-var logDetails2 = function (uid, item) {
-    console.log(item + " has uid of " + uid);
+//example 3
+var logDetails;
+logDetails = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
 };
-var greet2 = function (user) {
-    console.log(user.name + " says hello");
+logDetails = function (ninja) {
+    console.log(ninja.name + " is " + ninja.age + " years old");
 };

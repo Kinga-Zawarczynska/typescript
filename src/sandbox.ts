@@ -1,22 +1,32 @@
-type StringOrNum = string | number;
-type objWithName = { name: string, uid: StringOrNum }
+// let greet: Function;
 
-// INSTEAD OF WRITING THIS WITH CODE DUPLICATION
-
-const logDetails = (uid: string | number, item: string) => {
-    console.log(`${item} has uid of ${uid}`);
+// example 1
+let greet: (a: string, b: string) => void;
+greet = (name: string, greeting: string) => {
+    console.log(`${name} says ${greeting}`);
 }
 
-const greet = (user: {name: string, uid: string | number}) => {
-    console.log(`${user.name} says hello`);
+//example 2
+let calc: (a: number, b: number, c: string) => number;
+
+calc = (numOne: number, numTwo: number, action: string) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    } else {
+        return numOne - numTwo;
+    }
 }
 
-//WE CAN WRITE THIS USING TYPE ALIAS
 
-const logDetails2 = (uid: StringOrNum, item: string) => {
-    console.log(`${item} has uid of ${uid}`);
+//example 3
+let logDetails: (onj: {name: string, age: number}) => void;
+
+type person = {name: string, age: number}
+
+logDetails = (ninja: {name: string, age: number}) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`)
 }
 
-const greet2 = (user: objWithName) => {
-    console.log(`${user.name} says hello`);
+logDetails = (ninja: person) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`)
 }
