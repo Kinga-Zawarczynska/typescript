@@ -1,9 +1,11 @@
-var character = 'mario';
-var age = 30;
-var isBlackBelt = false;
-// character = 50;
-character = 'luigi';
-var circ = function (diameter) {
-    return diameter * Math.PI;
-};
-console.log(circ(3));
+var age = 25;
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
+age = { name: 'Luigi' };
+console.log(age);
+var mixed = [];
+mixed.push(5);
+mixed.push('name');
+console.log(mixed);
